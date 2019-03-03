@@ -1,0 +1,52 @@
+{
+  "name": "shared-torrent",
+  "version": "0.0.0-placeholder",
+  "description": "shared types and interfaces between torrent clients",
+  "author": "Scott Cooper <scttcper@gmail.com>",
+  "license": "MIT",
+  "repository": "typectrl/shared-torrent",
+  "main": "./index.js",
+  "typings": "./index.d.ts",
+  "sideEffects": false,
+  "keywords": [
+    "torrent",
+    "typescript"
+  ],
+  "scripts": {
+    "lint": "eslint src/**/*.ts test/**/*.ts",
+    "lint:fix": "eslint --fix src/**/*.ts test/**/*.ts",
+    "prebuild": "rimraf dist",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.module.json",
+    "postbuild": "cp package.json dist && cp LICENSE dist && cp README.md dist",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:ci": "jest --ci --runInBand --reporters=default --reporters=jest-junit --coverage",
+    "semantic-release": "cd dist && semantic-release"
+  },
+  "dependencies": {
+    "@types/got": "^9.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "11.10.4",
+    "@typescript-eslint/eslint-plugin": "1.4.2",
+    "@typescript-eslint/parser": "1.4.2",
+    "eslint": "5.15.0",
+    "eslint-config-prettier": "4.1.0",
+    "eslint-config-xo-space": "0.21.0",
+    "eslint-config-xo-typescript": "0.8.0",
+    "eslint-plugin-import": "2.16.0",
+    "got": "^9.6.0",
+    "rimraf": "2.6.3",
+    "semantic-release": "15.13.3",
+    "typescript": "3.3.3333"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "release": {
+    "branch": "master"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}
