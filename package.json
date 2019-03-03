@@ -13,8 +13,8 @@
     "typescript"
   ],
   "scripts": {
-    "lint": "eslint src/**/*.ts test/**/*.ts",
-    "lint:fix": "eslint --fix src/**/*.ts test/**/*.ts",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint --fix src/**/*.ts",
     "prebuild": "rimraf dist",
     "build": "tsc -p tsconfig.json && tsc -p tsconfig.module.json",
     "postbuild": "cp package.json dist && cp LICENSE dist && cp README.md dist",
