@@ -16,7 +16,7 @@
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint --fix src/**/*.ts",
     "prebuild": "rimraf dist",
-    "build": "tsc -p tsconfig.json && tsc -p tsconfig.module.json",
+    "build": "tsc -p tsconfig.json",
     "postbuild": "cp package.json dist && cp LICENSE dist && cp README.md dist",
     "test": "jest",
     "test:watch": "jest --watch",
