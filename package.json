@@ -1,5 +1,5 @@
 {
-  "name": "shared-torrent",
+  "name": "@ctrl/shared-torrent",
   "version": "0.0.0-placeholder",
   "description": "shared types and interfaces between torrent clients",
   "author": "Scott Cooper <scttcper@gmail.com>",
