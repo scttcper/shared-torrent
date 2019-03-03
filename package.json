@@ -35,7 +35,7 @@
     "eslint-config-xo-space": "0.21.0",
     "eslint-config-xo-typescript": "0.8.0",
     "eslint-plugin-import": "2.16.0",
-    "got": "^9.6.0",
+    "got": "9.6.0",
     "rimraf": "2.6.3",
     "semantic-release": "15.13.3",
     "typescript": "3.3.3333"
