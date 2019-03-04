@@ -1,8 +1,10 @@
 import { AgentOptions } from 'got';
 
 export interface TorrentSettings {
-  host: string;
-  port: string | number;
+  /**
+   * ex - `http://localhost:4444/
+   */
+  baseUrl: string;
   /**
    * ex - `'/json'`
    */
