@@ -9,16 +9,16 @@ export interface TorrentSettings {
    * ex - `'/json'`
    */
   path: string;
-  username: string;
-  password: string;
+  username?: string;
+  password?: string;
   /**
    * pass http agent for proxy
    * @link https://github.com/sindresorhus/got#proxies
    */
-  agent: AgentOptions;
+  agent?: AgentOptions;
   /**
    * request timeout
    * @link https://github.com/sindresorhus/got#timeout
    */
-  timeout: number;
+  timeout?: number;
 }
