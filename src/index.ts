@@ -51,7 +51,7 @@ export interface Label {
 }
 
 export interface NormalizedTorrent {
-  id: string;
+  id: string | number;
   /**
    * torrent name
    */
@@ -98,6 +98,10 @@ export interface NormalizedTorrent {
    * size of files to download in bytes
    */
   totalSelected: number;
+  /**
+   * total size of the torrent, in bytes
+   */
+  totalSize: number;
   /**
    * total upload in bytes
    */
