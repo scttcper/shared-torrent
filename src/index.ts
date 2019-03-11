@@ -3,12 +3,12 @@ import { AgentOptions } from 'got';
 export interface TorrentClient {
   config: TorrentSettings;
   getAllData(): Promise<AllClientData>;
-  getTorrent(id: string): Promise<NormalizedTorrent>;
-  pauseTorrent(id: string): Promise<any>;
-  resumeTorrent(id: string): Promise<any>;
-  removeTorrent(id: string, removeData?: boolean): Promise<any>;
-  queueUp(id: string): Promise<any>;
-  queueDown(id: string): Promise<any>;
+  getTorrent(id: any): Promise<NormalizedTorrent>;
+  pauseTorrent(id: any): Promise<any>;
+  resumeTorrent(id: any): Promise<any>;
+  removeTorrent(id: any, removeData?: boolean): Promise<any>;
+  queueUp(id: any): Promise<any>;
+  queueDown(id: any): Promise<any>;
 }
 
 export interface TorrentSettings {
