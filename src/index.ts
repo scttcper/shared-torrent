@@ -10,7 +10,7 @@ export interface TorrentClient {
   queueUp(id: any): Promise<any>;
   queueDown(id: any): Promise<any>;
   addTorrent(torrent: string | Buffer, options?: any): Promise<any>;
-  normalizedAddTorrent(torrent: string | Buffer, options: AddTorrentOptions): Promise<NormalizedTorrent>;
+  normalizedAddTorrent(torrent: string | Buffer, options?: Partial<AddTorrentOptions>): Promise<NormalizedTorrent>;
 }
 
 export interface TorrentSettings {
