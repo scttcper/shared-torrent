@@ -10,6 +10,7 @@ export interface TorrentClient {
   queueUp(id: any): Promise<any>;
   queueDown(id: any): Promise<any>;
   addTorrent(torrent: string | Buffer, options?: any): Promise<any>;
+  normalizedAddTorrent(torrent: string | Buffer, options: AddTorrentOptions): Promise<NormalizedTorrent>;
 }
 
 export interface TorrentSettings {
@@ -116,4 +117,16 @@ export interface NormalizedTorrent {
 export interface AllClientData {
   labels: Label[];
   torrents: NormalizedTorrent[];
+}
+
+export interface AddTorrentOptions {
+  /**
+   * start torrent paused, or pause after adding
+   * default: false
+   */
+  startPaused: boolean;
+  /**
+   * called a label in some clients and a category in others
+   */
+  label: string;
 }
