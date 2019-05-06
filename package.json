@@ -20,7 +20,7 @@
     "lint:fix": "eslint --fix src/**/*.ts",
     "prepare": "npm run build",
     "build": "del dist && tsc",
-    "semantic-release": "cd dist && semantic-release"
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@types/got": "^9.4.4"
