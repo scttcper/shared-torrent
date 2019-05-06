@@ -9,6 +9,7 @@ export interface TorrentClient {
   removeTorrent(id: any, removeData?: boolean): Promise<any>;
   queueUp(id: any): Promise<any>;
   queueDown(id: any): Promise<any>;
+  addTorrent(torrent: string | Buffer, options?: any): Promise<any>;
 }
 
 export interface TorrentSettings {
