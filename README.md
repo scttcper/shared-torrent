@@ -6,3 +6,4 @@
 - deluge - [https://github.com/TypeCtrl/deluge](@ctrl/deluge)
 - transmission - [https://github.com/TypeCtrl/transmission](@ctrl/transmission)
 - qbittorrent - [https://github.com/TypeCtrl/qbittorrent](@ctrl/qbittorrent)
+- utorrent - [https://github.com/TypeCtrl/utorrent](@ctrl/qbittorrent)  
