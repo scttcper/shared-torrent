@@ -3,8 +3,9 @@ module.exports = {
   env: {
     node: true,
   },
-  extends: ['xo-space/esnext', 'xo-typescript', 'prettier/@typescript-eslint'],
+  extends: ['xo-space/esnext', 'xo-typescript'],
   rules: {
+    '@typescript-eslint/indent': ['error', 2, { SwitchCase: 1 }],
     'object-curly-spacing': ['error', 'always'],
     'capitalized-comments': 0,
   },
