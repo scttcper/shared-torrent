@@ -8,5 +8,6 @@ module.exports = {
     '@typescript-eslint/indent': ['error', 2, { SwitchCase: 1 }],
     'object-curly-spacing': ['error', 'always'],
     'capitalized-comments': 0,
+    '@typescript-eslint/no-explicit-any': 0,
   },
 };

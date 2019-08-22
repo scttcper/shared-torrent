@@ -23,19 +23,19 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "@types/got": "^9.6.1"
+    "@types/got": "^9.6.7"
   },
   "devDependencies": {
-    "@types/node": "12.6.8",
-    "@typescript-eslint/eslint-plugin": "1.13.0",
-    "@typescript-eslint/parser": "1.13.0",
+    "@types/node": "12.7.2",
+    "@typescript-eslint/eslint-plugin": "2.0.0",
+    "@typescript-eslint/parser": "2.0.0",
     "del-cli": "2.0.0",
-    "eslint": "6.1.0",
+    "eslint": "6.2.1",
     "eslint-config-xo-space": "0.21.0",
-    "eslint-config-xo-typescript": "0.15.0",
+    "eslint-config-xo-typescript": "0.17.0",
     "eslint-plugin-import": "2.18.2",
     "got": "9.6.0",
-    "semantic-release": "15.13.19",
+    "semantic-release": "15.13.21",
     "typescript": "3.5.3"
   },
   "publishConfig": {
