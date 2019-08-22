@@ -16,8 +16,6 @@ jobs:
       - image: circleci/node:10
     steps:
       - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
       - run: npm install
       - run: npm run build
       - run: npm run semantic-release
