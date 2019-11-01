@@ -34,7 +34,7 @@
     "eslint-config-xo-typescript": "0.19.0",
     "eslint-plugin-import": "2.18.2",
     "got": "9.6.0",
-    "semantic-release": "15.13.24",
+    "semantic-release": "15.13.28",
     "typescript": "3.6.4"
   },
   "publishConfig": {
