@@ -13,7 +13,7 @@ jobs:
           command: npm run lint
   release:
     docker:
-      - image: circleci/node:10
+      - image: circleci/node:12
     steps:
       - checkout
       - run: npm ci
