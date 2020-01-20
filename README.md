@@ -3,7 +3,7 @@
 > shared types and interfaces between torrent clients
 
 #### Normalized Torrent Clients
-- deluge - [https://github.com/TypeCtrl/deluge](@ctrl/deluge)
-- transmission - [https://github.com/TypeCtrl/transmission](@ctrl/transmission)
-- qbittorrent - [https://github.com/TypeCtrl/qbittorrent](@ctrl/qbittorrent)
-- utorrent - [https://github.com/TypeCtrl/utorrent](@ctrl/qbittorrent)  
+- deluge - [@ctrl/deluge](https://github.com/TypeCtrl/deluge)
+- transmission - [@ctrl/transmission](https://github.com/TypeCtrl/transmission)
+- qbittorrent - [@ctrl/qbittorrent](https://github.com/TypeCtrl/qbittorrent)
+- utorrent - [@ctrl/qbittorrent](https://github.com/TypeCtrl/utorrent) 
