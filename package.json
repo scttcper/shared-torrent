@@ -16,26 +16,25 @@
     "typescript"
   ],
   "scripts": {
-    "lint": "eslint 'src/**/*.ts'",
-    "lint:fix": "eslint --fix 'src/**/*.ts'",
+    "lint": "eslint --ext .js,.ts, .",
+    "lint:fix": "eslint --fix --ext .js,.ts, .",
     "prepare": "npm run build",
     "build": "tsc",
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "@types/got": "^9.6.7"
+    "got": "^10.3.0"
   },
   "devDependencies": {
-    "@types/node": "12.12.22",
-    "@typescript-eslint/eslint-plugin": "2.14.0",
-    "@typescript-eslint/parser": "2.14.0",
+    "@types/node": "13.5.0",
+    "@typescript-eslint/eslint-plugin": "2.17.0",
+    "@typescript-eslint/parser": "2.17.0",
     "eslint": "6.8.0",
     "eslint-config-xo-space": "0.22.0",
     "eslint-config-xo-typescript": "0.24.1",
-    "eslint-plugin-import": "2.19.1",
-    "got": "9.6.0",
-    "semantic-release": "15.14.0",
-    "typescript": "3.7.4"
+    "eslint-plugin-import": "2.20.0",
+    "semantic-release": "16.0.3",
+    "typescript": "3.7.5"
   },
   "publishConfig": {
     "access": "public"
