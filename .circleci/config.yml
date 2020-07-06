@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: circleci/node:12
+      - image: circleci/node:14
     steps:
       - checkout
       - run:
@@ -13,11 +13,10 @@ jobs:
           command: npm run lint
   release:
     docker:
-      - image: circleci/node:12
+      - image: circleci/node:14
     steps:
       - checkout
       - run: npm ci
-      - run: npm run build
       - run: npm run semantic-release
 
 workflows:

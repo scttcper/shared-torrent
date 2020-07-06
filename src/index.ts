@@ -2,15 +2,15 @@ import { Agents } from 'got';
 
 export interface TorrentClient {
   config: TorrentSettings;
-  getAllData(): Promise<AllClientData>;
-  getTorrent(id: any): Promise<NormalizedTorrent>;
-  pauseTorrent(id: any): Promise<any>;
-  resumeTorrent(id: any): Promise<any>;
-  removeTorrent(id: any, removeData?: boolean): Promise<any>;
-  queueUp(id: any): Promise<any>;
-  queueDown(id: any): Promise<any>;
-  addTorrent(torrent: string | Buffer, options?: any): Promise<any>;
-  normalizedAddTorrent(torrent: string | Buffer, options?: Partial<AddTorrentOptions>): Promise<NormalizedTorrent>;
+  getAllData: () => Promise<AllClientData>;
+  getTorrent: (id: any) => Promise<NormalizedTorrent>;
+  pauseTorrent: (id: any) => Promise<any>;
+  resumeTorrent: (id: any) => Promise<any>;
+  removeTorrent: (id: any, removeData?: boolean) => Promise<any>;
+  queueUp: (id: any) => Promise<any>;
+  queueDown: (id: any) => Promise<any>;
+  addTorrent: (torrent: string | Buffer, options?: any) => Promise<any>;
+  normalizedAddTorrent: (torrent: string | Buffer, options?: Partial<AddTorrentOptions>) => Promise<NormalizedTorrent>;
 }
 
 export interface TorrentSettings {
