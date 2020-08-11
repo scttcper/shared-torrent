@@ -10,7 +10,6 @@
     "noImplicitAny": false,
     "noUnusedLocals": true,
     "declaration": true,
-    "incremental": true,
     "sourceMap": true,
     "outDir": "dist"
   },
