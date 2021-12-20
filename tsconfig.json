@@ -1,16 +1,6 @@
 {
-  "compileOnSave": false,
+  "extends": "@sindresorhus/tsconfig",
   "compilerOptions": {
-    "moduleResolution": "Node",
-    "lib": ["ES2020"],
-    "target": "ES2020",
-    "module": "CommonJS",
-    "strict": true,
-    "noImplicitAny": false,
-    "noUnusedLocals": true,
-    "declaration": true,
-    "sourceMap": false,
     "outDir": "dist"
-  },
-  "include": ["src/index.ts"]
+  }
 }

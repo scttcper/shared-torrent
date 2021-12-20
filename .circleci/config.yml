@@ -1,6 +1,7 @@
 version: 2.1
 orbs:
   node: circleci/node@4
+  codecov: codecov/codecov@3
 jobs:
   test:
     executor:
@@ -13,8 +14,9 @@ jobs:
           name: lint
           command: npm run lint
   release:
-    docker:
-      - image: cimg/node:current
+    executor:
+      name: node/default
+      tag: 'current'
     steps:
       - checkout
       - node/install-packages
@@ -23,13 +25,14 @@ jobs:
 workflows:
   version: 2
   test_and_release:
-    # Run the test jobs first, then the release only when all the test jobs are successful
     jobs:
       - test
       - release:
           filters:
             branches:
               only:
-                - master
+                - main
+          context:
+            - npm
           requires:
             - test
