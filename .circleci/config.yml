@@ -31,7 +31,7 @@ workflows:
           filters:
             branches:
               only:
-                - main
+                - master
           context:
             - npm
           requires:
