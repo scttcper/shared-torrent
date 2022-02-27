@@ -56,7 +56,10 @@ export interface Label {
 }
 
 export interface NormalizedTorrent {
-  id: string | number;
+  /**
+   * torrent hash id
+   */
+  id: string;
   /**
    * torrent name
    */
