@@ -45,6 +45,7 @@ export enum TorrentState {
   paused = 'paused',
   queued = 'queued',
   checking = 'checking',
+  warning = 'warning',
   error = 'error',
   unknown = 'unknown',
 }
@@ -78,7 +79,7 @@ export interface NormalizedTorrent {
    */
   dateAdded: string;
   /**
-   * date completd as iso string;
+   * date completed as iso string;
    */
   dateCompleted?: string;
   savePath: string;
