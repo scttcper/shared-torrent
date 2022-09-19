@@ -20,13 +20,13 @@
     "build": "tsc"
   },
   "dependencies": {
-    "got": "^12.3.1"
+    "got": "^12.4.1"
   },
   "devDependencies": {
     "@sindresorhus/tsconfig": "3.0.1",
-    "@ctrl/eslint-config": "3.4.9",
-    "@types/node": "18.7.14",
-    "typescript": "4.8.2"
+    "@ctrl/eslint-config": "3.5.0",
+    "@types/node": "18.7.18",
+    "typescript": "4.8.3"
   },
   "publishConfig": {
     "access": "public"
