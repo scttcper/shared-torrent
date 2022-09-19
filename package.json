@@ -20,7 +20,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "got": "^12.4.1"
+    "got": "^12.5.0"
   },
   "devDependencies": {
     "@sindresorhus/tsconfig": "3.0.1",
