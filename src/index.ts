@@ -83,7 +83,14 @@ export interface NormalizedTorrent {
    */
   dateCompleted?: string;
   savePath: string;
+  /**
+   * Sometimes called "Category", other times called label
+   */
   label?: string;
+  /**
+   * Note that this is different from label
+   */
+  tags?: string[];
   state: TorrentState;
   stateMessage: string;
   /**
@@ -119,11 +126,19 @@ export interface NormalizedTorrent {
    * total download in bytes
    */
   totalDownloaded: number;
+  /**
+   * Raw data returned by client
+   */
+  raw: any;
 }
 
 export interface AllClientData {
   labels: Label[];
   torrents: NormalizedTorrent[];
+  /**
+   * Raw data returned by client
+   */
+  raw: any;
 }
 
 export interface AddTorrentOptions {
