@@ -1,4 +1,4 @@
-import { Agents } from 'got';
+import type { Agents } from 'got';
 
 export interface TorrentClient {
   config: TorrentSettings;
