@@ -19,23 +19,23 @@
     "prepare": "npm run build",
     "build": "tsc"
   },
-  "dependencies": {
-    "got": "^12.6.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@sindresorhus/tsconfig": "3.0.1",
-    "@ctrl/eslint-config": "3.7.0",
-    "@types/node": "20.1.0",
-    "typescript": "5.0.4"
+    "@ctrl/eslint-config": "4.0.6",
+    "@sindresorhus/tsconfig": "4.0.0",
+    "@types/node": "20.6.0",
+    "typescript": "5.2.2"
   },
   "publishConfig": {
     "access": "public",
     "provenance": true
   },
   "release": {
-    "branches": ["master"]
+    "branches": [
+      "master"
+    ]
   },
   "engines": {
-    "node": ">=14.16"
+    "node": ">=16"
   }
 }

@@ -1,4 +1,4 @@
-import type { Agents } from 'got';
+import type { Agent } from 'http';
 
 export interface TorrentClient {
   config: TorrentSettings;
@@ -31,7 +31,7 @@ export interface TorrentSettings {
    * pass http agent for proxy
    * @link https://github.com/sindresorhus/got/blob/main/documentation/tips.md#proxying
    */
-  agent?: Agents;
+  agent?: Agent;
   /**
    * request timeout
    * @link https://github.com/sindresorhus/got/blob/main/documentation/6-timeout.md
