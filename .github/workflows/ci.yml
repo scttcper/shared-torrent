@@ -27,11 +27,6 @@ jobs:
       - name: lint
         run: pnpm run lint
 
-      - name: coverage
-        uses: codecov/codecov-action@v4
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-
   publish:
     needs: build
     runs-on: ubuntu-latest
