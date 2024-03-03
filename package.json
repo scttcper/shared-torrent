@@ -14,17 +14,22 @@
   "sideEffects": false,
   "keywords": [],
   "scripts": {
-    "lint": "eslint --ext .ts .",
-    "lint:fix": "eslint --fix --ext .ts .",
+    "lint": "pnpm run '/^(lint:biome|lint:eslint)$/'",
+    "lint:biome": "biome check .",
+    "lint:eslint": "eslint --ext .ts,.tsx .",
+    "lint:fix": "pnpm run '/^(lint:biome|lint:eslint):fix$/'",
+    "lint:eslint:fix": "eslint --ext .ts,.tsx . --fix",
+    "lint:biome:fix": "biome check . --apply",
     "prepare": "npm run build",
     "build": "tsc"
   },
   "dependencies": {},
   "devDependencies": {
-    "@ctrl/eslint-config": "4.0.6",
-    "@sindresorhus/tsconfig": "4.0.0",
-    "@types/node": "20.6.0",
-    "typescript": "5.2.2"
+    "@biomejs/biome": "1.5.3",
+    "@ctrl/eslint-config-biome": "2.0.9",
+    "@sindresorhus/tsconfig": "5.0.0",
+    "@types/node": "20.11.24",
+    "typescript": "5.3.3"
   },
   "publishConfig": {
     "access": "public",
@@ -36,6 +41,6 @@
     ]
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   }
 }

@@ -9,9 +9,9 @@ export interface TorrentClient {
   removeTorrent: (id: any, removeData?: boolean) => Promise<any>;
   queueUp: (id: any) => Promise<any>;
   queueDown: (id: any) => Promise<any>;
-  addTorrent: (torrent: string | Buffer, options?: any) => Promise<any>;
+  addTorrent: (torrent: string | Uint8Array, options?: any) => Promise<any>;
   normalizedAddTorrent: (
-    torrent: string | Buffer,
+    torrent: string | Uint8Array,
     options?: Partial<AddTorrentOptions>,
   ) => Promise<NormalizedTorrent>;
 }
