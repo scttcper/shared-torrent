@@ -1,5 +1,3 @@
-import type { Agent } from 'http';
-
 export interface TorrentClient {
   config: TorrentSettings;
   getAllData: () => Promise<AllClientData>;
@@ -28,13 +26,16 @@ export interface TorrentSettings {
   username?: string;
   password?: string;
   /**
-   * pass http agent for proxy
-   * @link https://github.com/sindresorhus/got/blob/main/documentation/tips.md#proxying
+   * Pass proxy agent to ofetch
+   * Only supported in Node.js >= 18 using undici
+   *
+   * @see https://undici.nodejs.org/#/docs/api/Dispatcher
+   * @link https://github.com/unjs/ofetch#%EF%B8%8F-adding-https-agent
    */
-  agent?: Agent;
+  dispatcher?: InstanceType<typeof import('undici').Dispatcher>;
   /**
-   * request timeout
-   * @link https://github.com/sindresorhus/got/blob/main/documentation/6-timeout.md
+   * global request timeout
+   * @link https://github.com/unjs/ofetch#%EF%B8%8F-timeout
    */
   timeout?: number;
 }
