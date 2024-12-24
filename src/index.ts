@@ -1,20 +1,46 @@
 export interface TorrentClient {
-  config: TorrentSettings;
-  getAllData: () => Promise<AllClientData>;
-  getTorrent: (id: any) => Promise<NormalizedTorrent>;
-  pauseTorrent: (id: any) => Promise<any>;
-  resumeTorrent: (id: any) => Promise<any>;
-  removeTorrent: (id: any, removeData?: boolean) => Promise<any>;
-  queueUp: (id: any) => Promise<any>;
-  queueDown: (id: any) => Promise<any>;
-  addTorrent: (torrent: string | Uint8Array, options?: any) => Promise<any>;
-  normalizedAddTorrent: (
+  config: TorrentClientConfig;
+  state: TorrentClientState;
+  /**
+   * Create a new client instance from an existing state.
+   */
+  createFromState(config: TorrentClientConfig, state: TorrentClientState): TorrentClient;
+  /**
+   * Export the current state of the client. Can be restored with `createFromState`.
+   */
+  exportState(): TorrentClientState;
+  /**
+   * Returns all torrent data. Data has been normalized
+   */
+  getAllData(): Promise<AllClientData>;
+  getTorrent(id: any): Promise<NormalizedTorrent>;
+  pauseTorrent(id: any): Promise<unknown>;
+  resumeTorrent(id: any): Promise<unknown>;
+  removeTorrent(id: any, removeData?: boolean): Promise<unknown>;
+  queueUp(id: any): Promise<unknown>;
+  queueDown(id: any): Promise<unknown>;
+  addTorrent(torrent: string | Uint8Array, options?: any): Promise<unknown>;
+  normalizedAddTorrent(
     torrent: string | Uint8Array,
     options?: Partial<AddTorrentOptions>,
-  ) => Promise<NormalizedTorrent>;
+  ): Promise<NormalizedTorrent>;
 }
 
-export interface TorrentSettings {
+/**
+ * A JSON serializable object that stores the state of the client.
+ */
+export interface TorrentClientState {
+  /**
+   * Authentication credentials
+   */
+  auth?: Record<string, unknown>;
+  /**
+   * Client version information
+   */
+  version?: Record<string, unknown>;
+}
+
+export interface TorrentClientConfig {
   /**
    * ex - `http://localhost:4444/
    */
@@ -39,6 +65,11 @@ export interface TorrentSettings {
    */
   timeout?: number;
 }
+
+/**
+ * @deprecated Use `TorrentClientConfig` instead.
+ */
+export type TorrentSettings = TorrentClientConfig;
 
 export enum TorrentState {
   downloading = 'downloading',
