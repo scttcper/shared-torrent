@@ -2,10 +2,6 @@ export interface TorrentClient {
   config: TorrentClientConfig;
   state: TorrentClientState;
   /**
-   * Create a new client instance from an existing state.
-   */
-  createFromState(config: TorrentClientConfig, state: TorrentClientState): TorrentClient;
-  /**
    * Export the current state of the client. Can be restored with `createFromState`.
    */
   exportState(): TorrentClientState;
