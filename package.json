@@ -26,11 +26,11 @@
   "dependencies": {},
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "@ctrl/eslint-config-biome": "4.3.1",
+    "@ctrl/eslint-config-biome": "4.3.4",
     "@sindresorhus/tsconfig": "7.0.0",
-    "@types/node": "22.10.2",
-    "typescript": "5.7.2",
-    "undici": "^7.2.0"
+    "@types/node": "22.14.0",
+    "typescript": "5.8.2",
+    "undici": "^7.7.0"
   },
   "publishConfig": {
     "access": "public",
@@ -43,5 +43,6 @@
   },
   "engines": {
     "node": ">=18"
-  }
+  },
+  "packageManager": "pnpm@10.7.1"
 }
