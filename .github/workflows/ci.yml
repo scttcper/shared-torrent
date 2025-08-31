@@ -12,10 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/checkout@v4
-
       - uses: wyvox/action-setup-pnpm@v3
-        with: { node-version: 23 }
+        with: { node-version: 24 }
 
       - name: lint
         run: pnpm run lint
@@ -35,7 +33,7 @@ jobs:
           fetch-depth: 0
 
       - uses: wyvox/action-setup-pnpm@v3
-        with: { node-version: 22 }
+        with: { node-version: 24 }
 
       - name: release
         run: npx semantic-release

@@ -1,3 +1,5 @@
+import type { FetchOptions } from 'ofetch';
+
 export interface TorrentClient {
   config: TorrentClientConfig;
   state: TorrentClientState;
@@ -17,7 +19,7 @@ export interface TorrentClient {
   queueDown(id: any): Promise<unknown>;
   addTorrent(torrent: string | Uint8Array, options?: any): Promise<unknown>;
   normalizedAddTorrent(
-    torrent: string | Uint8Array,
+    torrent: string | Uint8Array<ArrayBuffer>,
     options?: Partial<AddTorrentOptions>,
   ): Promise<NormalizedTorrent>;
 }
@@ -54,7 +56,7 @@ export interface TorrentClientConfig {
    * @see https://undici.nodejs.org/#/docs/api/Dispatcher
    * @link https://github.com/unjs/ofetch#%EF%B8%8F-adding-https-agent
    */
-  dispatcher?: InstanceType<typeof import('undici').Dispatcher>;
+  dispatcher?: FetchOptions['dispatcher'];
   /**
    * global request timeout
    * @link https://github.com/unjs/ofetch#%EF%B8%8F-timeout

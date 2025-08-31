@@ -14,24 +14,24 @@
   "sideEffects": false,
   "keywords": [],
   "scripts": {
-    "lint": "pnpm run '/^(lint:biome|lint:eslint)$/'",
-    "lint:biome": "biome check .",
-    "lint:eslint": "eslint .",
-    "lint:fix": "pnpm run '/^(lint:biome|lint:eslint):fix$/'",
-    "lint:eslint:fix": "eslint . --fix",
-    "lint:biome:fix": "biome check . --write",
+    "lint": "oxlint . && prettier --check . --experimental-cli",
+    "lint:fix": "oxlint . --fix && prettier --write . --log-level=error --experimental-cli",
     "prepare": "npm run build",
     "build": "tsc"
   },
   "dependencies": {},
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@ctrl/eslint-config-biome": "4.3.4",
-    "@sindresorhus/tsconfig": "7.0.0",
-    "@types/node": "22.14.0",
-    "eslint": "^9.23.0",
-    "typescript": "5.8.2",
-    "undici": "^7.7.0"
+    "@ctrl/oxlint-config": "1.2.3",
+    "@sindresorhus/tsconfig": "8.0.1",
+    "@types/node": "24.3.0",
+    "@trivago/prettier-plugin-sort-imports": "5.2.2",
+    "ofetch": "1.4.1",
+    "oxlint": "1.14.0",
+    "prettier": "3.6.2",
+    "typescript": "5.9.2"
+  },
+  "peerDependencies": {
+    "ofetch": "^1.4.1"
   },
   "publishConfig": {
     "access": "public",
@@ -45,5 +45,23 @@
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "pnpm@10.7.1"
+  "packageManager": "pnpm@10.15.0",
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "arrowParens": "avoid",
+    "semi": true,
+    "printWidth": 100,
+    "plugins": ["@trivago/prettier-plugin-sort-imports"],
+    "importOrder": [
+      "^node:.*$",
+      "<THIRD_PARTY_MODULES>",
+      "^(@ctrl)(/.*|$)",
+      "^\\.\\./(?!.*\\.css$)",
+      "^\\./(?!.*\\.css$)(?=.*/)",
+      "^\\./(?!.*\\.css$)(?!.*/)"
+    ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": false
+  }
 }
