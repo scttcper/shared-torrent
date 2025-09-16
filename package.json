@@ -4,7 +4,10 @@
   "description": "shared types and interfaces between torrent clients",
   "author": "Scott Cooper <scttcper@gmail.com>",
   "license": "MIT",
-  "repository": "scttcper/shared-torrent",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scttcper/shared-torrent.git"
+  },
   "type": "module",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
