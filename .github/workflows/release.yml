@@ -15,4 +15,4 @@ jobs:
     name: NPM Release
     uses: scttcper/github-actions/.github/workflows/npm-release.yml@main
     secrets:
-      GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
+      GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
