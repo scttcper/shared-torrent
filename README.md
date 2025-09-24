@@ -1,6 +1,4 @@
-# @ctrl/shared-torrent 
-
-[![npm](https://badgen.net/npm/v/@ctrl/shared-torrent)](https://www.npmjs.com/package/@ctrl/shared-torrent)
+# @ctrl/shared-torrent [![npm](https://badgen.net/npm/v/@ctrl/shared-torrent)](https://www.npmjs.com/package/@ctrl/shared-torrent)
 
 > shared types and interfaces between torrent clients
 
