@@ -1,6 +1,6 @@
 {
   "name": "@ctrl/shared-torrent",
-  "version": "0.0.0-placeholder",
+  "version": "6.5.0",
   "description": "shared types and interfaces between torrent clients",
   "author": "Scott Cooper <scttcper@gmail.com>",
   "license": "MIT",
@@ -55,7 +55,9 @@
     "arrowParens": "avoid",
     "semi": true,
     "printWidth": 100,
-    "plugins": ["@trivago/prettier-plugin-sort-imports"],
+    "plugins": [
+      "@trivago/prettier-plugin-sort-imports"
+    ],
     "importOrder": [
       "^node:.*$",
       "<THIRD_PARTY_MODULES>",
