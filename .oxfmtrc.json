@@ -3,9 +3,9 @@
   "printWidth": 100,
   "singleQuote": true,
   "arrowParens": "avoid",
-  "experimentalSortImports": {
+  "sortImports": {
     "groups": [
-      ["side-effect-style", "side-effect"],
+      ["side_effect_style", "side_effect"],
       "builtin",
       "external",
       "internal",
@@ -15,8 +15,5 @@
     ],
     "newlinesBetween": true
   },
-  "experimentalSortPackageJson": true,
-  "experimentalTailwindcss": {
-    "classOrder": "shadcn"
-  }
+  "sortPackageJson": true
 }
