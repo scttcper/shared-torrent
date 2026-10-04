@@ -1,6 +1,7 @@
 {
   "extends": "@sindresorhus/tsconfig",
   "compilerOptions": {
+    "rootDir": "src",
     "outDir": "dist",
     "erasableSyntaxOnly": false
   }
