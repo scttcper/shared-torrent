@@ -13,3 +13,4 @@
 - qbittorrent - [@ctrl/qbittorrent](https://github.com/scttcper/qbittorrent)
 - rtorrent - [@ctrl/rtorrent](https://github.com/scttcper/rtorrent)
 - utorrent - [@ctrl/utorrent](https://github.com/scttcper/utorrent)
+- rqbit - [@ctrl/rqbit](https://github.com/scttcper/rqbit)
