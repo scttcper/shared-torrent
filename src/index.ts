@@ -88,7 +88,7 @@ export interface Label {
 
 export interface NormalizedTorrent {
   /**
-   * torrent hash id
+   * torrent info hash, lowercase
    */
   id: string;
   /**
@@ -96,7 +96,7 @@ export interface NormalizedTorrent {
    */
   name: string;
   /**
-   * progress percent out of 100
+   * progress from 0 to 1
    */
   progress: number;
   isCompleted: boolean;
@@ -109,7 +109,7 @@ export interface NormalizedTorrent {
    */
   dateAdded: string;
   /**
-   * date completed as iso string;
+   * date completed as iso string, undefined until the torrent is completed
    */
   dateCompleted?: string;
   savePath: string;
