@@ -12,28 +12,28 @@ export interface TorrentClient {
    */
   getAllData(): Promise<AllClientData>;
   /**
-   * Throws when the torrent doesn't exist
+   * Throws a {@link TorrentClientError} with the `torrent_not_found` code when the torrent doesn't exist
    */
   getTorrent(id: any): Promise<NormalizedTorrent>;
   /**
-   * Pause one or more torrents, clients resolve with `void`
+   * Pause one or more torrents, clients resolve with `void`. Throws `torrent_not_found` when a torrent doesn't exist
    */
   pauseTorrent(id: any): Promise<unknown>;
   /**
-   * Resume one or more torrents, clients resolve with `void`
+   * Resume one or more torrents, clients resolve with `void`. Throws `torrent_not_found` when a torrent doesn't exist
    */
   resumeTorrent(id: any): Promise<unknown>;
   /**
-   * Remove one or more torrents, clients resolve with `void`. Throws when a torrent doesn't exist
+   * Remove one or more torrents, clients resolve with `void`. Throws `torrent_not_found` when a torrent doesn't exist
    * @param removeData (default: false) also remove downloaded data from disk
    */
   removeTorrent(id: any, removeData?: boolean): Promise<unknown>;
   /**
-   * Move one or more torrents up the queue, clients resolve with `void`. Throws when the client has no queue
+   * Move one or more torrents up the queue, clients resolve with `void`. Throws `torrent_not_found` when a torrent doesn't exist, throws when the client has no queue
    */
   queueUp(id: any): Promise<unknown>;
   /**
-   * Move one or more torrents down the queue, clients resolve with `void`. Throws when the client has no queue
+   * Move one or more torrents down the queue, clients resolve with `void`. Throws `torrent_not_found` when a torrent doesn't exist, throws when the client has no queue
    */
   queueDown(id: any): Promise<unknown>;
   addTorrent(torrent: string | Uint8Array, options?: any): Promise<unknown>;
@@ -218,4 +218,38 @@ export interface AddTorrentOptions {
    * called a label in some clients and a category in others
    */
   label: string;
+}
+
+/**
+ * - `torrent_not_found` the torrent doesn't exist in the client
+ * - `unauthorized` the client rejected the credentials
+ * - `request_failed` the request didn't succeed, `status` is the http status. Network errors and timeouts have no `status`
+ * - `client_error` the client responded with an error of its own, ex - a Deluge JSON-RPC error or an rTorrent XML-RPC fault
+ */
+export type TorrentClientErrorCode =
+  | 'torrent_not_found'
+  | 'unauthorized'
+  | 'request_failed'
+  | 'client_error';
+
+/**
+ * Thrown by every torrent client for failed requests, the original error is the `cause`
+ */
+export class TorrentClientError extends Error {
+  override name = 'TorrentClientError';
+  readonly code: TorrentClientErrorCode;
+  /**
+   * http status when the client responded with one
+   */
+  readonly status?: number;
+
+  constructor(
+    message: string,
+    code: TorrentClientErrorCode,
+    options: { status?: number; cause?: unknown } = {},
+  ) {
+    super(message, { cause: options.cause });
+    this.code = code;
+    this.status = options.status;
+  }
 }
