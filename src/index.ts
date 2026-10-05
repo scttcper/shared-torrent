@@ -88,7 +88,7 @@ export interface Label {
 
 export interface NormalizedTorrent {
   /**
-   * torrent hash id
+   * torrent info hash, lowercase
    */
   id: string;
   /**
@@ -96,25 +96,25 @@ export interface NormalizedTorrent {
    */
   name: string;
   /**
-   * progress percent out of 100
+   * progress from 0 to 1
    */
   progress: number;
   isCompleted: boolean;
   /**
-   * 1:1 is 1, half seeded is 0.5
+   * uploaded / downloaded, 1:1 is 1, half seeded is 0.5. 0 when nothing has been downloaded
    */
   ratio: number;
   /**
-   * date as iso string
+   * date as iso string, empty string when the client doesn't track it
    */
   dateAdded: string;
   /**
-   * date completed as iso string;
+   * date completed as iso string, undefined until the torrent is completed
    */
   dateCompleted?: string;
   savePath: string;
   /**
-   * Sometimes called "Category", other times called label
+   * Sometimes called "Category", other times called label. undefined when the torrent has none
    */
   label?: string;
   /**
@@ -122,6 +122,9 @@ export interface NormalizedTorrent {
    */
   tags?: string[];
   state: TorrentState;
+  /**
+   * status or error message from the client, empty string when there is none
+   */
   stateMessage: string;
   /**
    * bytes per second
@@ -132,13 +135,28 @@ export interface NormalizedTorrent {
    */
   downloadSpeed: number;
   /**
-   * seconds until finish
+   * seconds until finish, 0 when completed, -1 when unknown (stalled, no estimate)
    */
   eta: number;
+  /**
+   * position in the client's download queue starting at 1, 0 when not queued or the client has no queue
+   */
   queuePosition: number;
+  /**
+   * connected peers that have the complete torrent
+   */
   connectedSeeds: number;
+  /**
+   * connected peers that don't have the complete torrent
+   */
   connectedPeers: number;
+  /**
+   * seeds in the swarm as reported by trackers, 0 when unknown
+   */
   totalSeeds: number;
+  /**
+   * peers in the swarm as reported by trackers, 0 when unknown
+   */
   totalPeers: number;
   /**
    * size of files to download in bytes
