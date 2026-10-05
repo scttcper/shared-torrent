@@ -16,24 +16,24 @@ export interface TorrentClient {
    */
   getTorrent(id: any): Promise<NormalizedTorrent>;
   /**
-   * Pause one or more torrents, clients resolve with `void`. Throws `torrent_not_found` when a torrent doesn't exist
+   * Pause one or more torrents, clients resolve with `void`
    */
   pauseTorrent(id: any): Promise<unknown>;
   /**
-   * Resume one or more torrents, clients resolve with `void`. Throws `torrent_not_found` when a torrent doesn't exist
+   * Resume one or more torrents, clients resolve with `void`
    */
   resumeTorrent(id: any): Promise<unknown>;
   /**
-   * Remove one or more torrents, clients resolve with `void`. Throws `torrent_not_found` when a torrent doesn't exist
+   * Remove one or more torrents, clients resolve with `void`
    * @param removeData (default: false) also remove downloaded data from disk
    */
   removeTorrent(id: any, removeData?: boolean): Promise<unknown>;
   /**
-   * Move one or more torrents up the queue, clients resolve with `void`. Throws `torrent_not_found` when a torrent doesn't exist, throws when the client has no queue
+   * Move one or more torrents up the queue, clients resolve with `void`. Throws when the client has no queue
    */
   queueUp(id: any): Promise<unknown>;
   /**
-   * Move one or more torrents down the queue, clients resolve with `void`. Throws `torrent_not_found` when a torrent doesn't exist, throws when the client has no queue
+   * Move one or more torrents down the queue, clients resolve with `void`. Throws when the client has no queue
    */
   queueDown(id: any): Promise<unknown>;
   addTorrent(torrent: string | Uint8Array, options?: any): Promise<unknown>;
